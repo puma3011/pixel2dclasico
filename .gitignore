@@ -1,0 +1,19 @@
+# Unity 
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uilds/
+[Bb]uild/
+[Ll]ogs/
+Packages/manifest.lock
+
+# Archivos de Visual Studio y JetBrains
+.vs/
+*.csproj
+*.sln
+*.userprefs
+.idea/
+
+# Archivos temporales de Mac y Windows
+.DS_Store
+Thumbs.db

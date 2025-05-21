@@ -7,7 +7,6 @@ public class Enemigo : MonoBehaviour
 
     private Animator animator;
 
-
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -24,7 +23,13 @@ public class Enemigo : MonoBehaviour
 
     private void Muerte()
     {
-        animator.SetTrigger("Muerte");
-        Destroy(gameObject, 2);
+        animator.SetTrigger("DeathTrigger");
+        // No destruimos aquí para esperar al evento de la animación
+    }
+
+    // Este método será llamado desde el Animation Event en el último frame de la animación DeathRat
+    public void DestruirObjeto()
+    {
+        Destroy(gameObject);
     }
 }

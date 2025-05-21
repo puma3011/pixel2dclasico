@@ -24,7 +24,7 @@ public class Enemigo : MonoBehaviour
 
     private void Muerte()
     {
-        animator.SetTrigger("DeathSpider");
+        animator.SetTrigger("Muerte");
         Destroy(gameObject, 2);
     }
 }

@@ -23,12 +23,22 @@ public class Movimiento2D : MonoBehaviour
     private Animator animator;
     private bool puedeMoverse = true;
     private bool estaAtacando = false;
+    private CombateCaC combate;
+
 
 
     private void Awake()
     {
         controles = new();
         animator = GetComponent<Animator>();
+        combate = GetComponent<CombateCaC>();
+        combate = GetComponent<CombateCaC>();
+        if (combate == null)
+        {
+            Debug.LogWarning("No se encontró el componente CombateCaC en el jugador.");
+        }
+
+
     }
 
     private void OnEnable()
@@ -112,11 +122,10 @@ public class Movimiento2D : MonoBehaviour
 
         estaAtacando = true;
         puedeMoverse = false;
-        animator.SetTrigger("Atacar");
-
-        // Esperar duración del ataque (ajústalo al tiempo real de la animación)
-        Invoke(nameof(FinAtaque), 0.5f);
+        animator.SetTrigger("Golpe"); // Asegúrate que así se llame el parámetro en el Animator
+        Invoke(nameof(FinAtaque), 0.5f); // Ajusta duración según tu animación real
     }
+
     private void FinAtaque()
     {
         estaAtacando = false;
